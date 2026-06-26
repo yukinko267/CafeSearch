@@ -1,8 +1,12 @@
 import "./ShopCard.css";
 
-function ShopCard({ shop, onClick }) {
+function ShopCard({ shop, isSelected, onClick }) {
   return (
-    <div className="shop-card" onClick={onClick} style={{ cursor: "pointer" }}>
+    <div
+      className={`shop-card ${isSelected ? "shop-card-selected" : ""}`}
+      onClick={onClick}
+      style={{ cursor: "pointer" }}
+    >
       <img className="shop-image" src={shop.photo.pc.l} alt={shop.name} />
 
       <div className="shop-content">
